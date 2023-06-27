@@ -1,0 +1,112 @@
+version: '3.1'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+  
+intents:
+- positiveFeedback
+- repetitions
+- understand
+- nUnderstand:
+    use_entities:
+       -topic
+- video:
+    use_entities:
+       -topic
+- exercise:
+    use_entities:
+       -topic
+- greet
+- goodbye
+- affirm
+- deny
+- presentation:
+    use_entities:
+       -name
+- topics:
+    use_entities:
+       -topic
+- mood_great:
+    use_entities:
+       -mood
+- mood_unhappy:
+    use_entities:
+       -mood
+- mood_angry:
+    use_entities:
+       -mood
+    
+entities:
+  - topic
+  - name
+  - mood
+
+slots:
+  topic:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: topic
+    influence_conversation: true
+  name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  mood:
+    type: categorical
+    values:
+      - happy
+      - sad
+      - angry
+    mappings:
+      - type: from_entity
+        entity: mood
+
+responses:
+
+  utter_greet:
+  - text: Buenas! Mi nombre es Alfred Nobel y soy un profesor de química especializado en Radio Atomico, Estequiometria, Estructura de Lewis, Enlace Ionico y Enlace Covalentes. ¿Cómo te llamas?
+  - text: Hola! Mi nombre es Alfred Nobel y soy un profesor de química. ¿Cómo te llamas?
+  utter_what_do_u_need:
+  - text: En que puedo ayudarte?
+  - text: Como puedo ser de ayuda?
+  - text: Que necesitas?
+  utter_choose_topic:
+  - text: Dime el tema, por favor.
+  - text: Podrias especificar el tema al que te refieres?
+  - text: Seria util que especificaras el tema.
+  utter_thanks:
+  - text: De nada!
+  - text: Me alegra ser de ayuda!
+  - text: No hay de que!
+  utter_ask:
+  - text: Necesitas algo mas?
+  - text: Algo mas en lo que pueda ayudarte?
+  utter_explain_again:
+  - text: Puedo volver a explicar si quieres
+  - text: Quieres que explique nuevamente?
+  utter_how_are_u:
+  - text: Como estas?
+  - text: Como andas?
+  utter_welcome:
+  - text: Un gusto conocerte, {name}.
+  utter_answer_greet:
+  - text: Yo bien! 
+  utter_happy:
+  - text: Me alegro por vos!
+  utter_unhappy:
+  - text: Animo! Que ha pasado?
+  utter_angry:
+  - text: Tranqui, estoy aqui para lo que necesites.
+  utter_goodbye:
+  - text: Adios, {name}!
+  
+actions: 
+  - action_topic_explanation
+  - action_give_video
+  - action_custom_goodbye
+  - action_give_exercise
+
