@@ -1,0 +1,115 @@
+version: "3.1"
+
+stories:
+
+- story: exercise with topic
+  steps:
+  - intent: exercise
+    entities: 
+    - topic: "Enlace Ionico"
+  - slot_was_set:
+    - topic: "Enlace Ionico"
+  - action: action_give_exercise
+  
+- story: exercise without topic
+  steps:
+  - intent: exercise
+  - action: utter_choose_topic
+  - intent: topics
+    entities: 
+    - topic: "Enlace Ionico"
+  - slot_was_set:
+    - topic: "Enlace Ionico"
+  - action: action_give_exercise
+
+
+- story: video with topic
+  steps:
+  - intent: video
+    entities: 
+    - topic: "Enlace Ionico"
+  - slot_was_set:
+    - topic: "Enlace Ionico"
+  - action: action_give_video
+  
+- story: video without topic
+  steps:
+  - intent: video
+  - action: utter_choose_topic
+  - intent: topics
+    entities: 
+    - topic: "Enlace Ionico"
+  - slot_was_set:
+    - topic: "Enlace Ionico"
+  - action: action_give_video
+
+- story: explanations with topic
+  steps:
+  - intent: topics
+    entities: 
+    - topic: "Enlace Ionico"
+  - slot_was_set:
+    - topic: "Enlace Ionico"  
+  - action: action_topic_explanation
+
+- story: explanations without topic
+  steps:
+  - intent: nUnderstand
+  - action: utter_choose_topic
+  - intent: topics
+    entities: 
+    - topic: "Enlace Ionico"
+  - slot_was_set:
+    - topic: "Enlace Ionico"  
+  - action: action_topic_explanation
+
+- story: Not confused user
+  steps:
+  - intent: understand
+  - action: utter_ask
+  - intent: affirm
+  - action: utter_what_do_u_need
+
+- story: Not confused user
+  steps:
+  - intent: understand
+  - action: utter_ask
+  - intent: deny
+  - action: action_custom_goodbye
+  
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: presentation
+    entities:
+    - name: "Santiago"
+  - slot_was_set:
+    - name: "Santiago"
+  - action: utter_welcome
+  - action: utter_how_are_u
+
+- story: happy 
+  steps:
+  - intent: mood_great
+  - action: utter_happy
+  - action: utter_what_do_u_need
+
+- story: angry
+  steps:
+  - intent: mood_angry
+  - action: utter_angry
+  - action: utter_what_do_u_need
+    
+- story: sad
+  steps:
+  - intent: mood_unhappy
+  - action: utter_unhappy
+  - action: utter_what_do_u_need
+  
+- story: thanks
+  steps:
+  - intent: positiveFeedback
+  - action: utter_thanks
+  - action: utter_ask
+

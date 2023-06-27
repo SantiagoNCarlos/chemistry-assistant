@@ -1,0 +1,45 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: action_custom_goodbye
+  
+- rule: Presentation everytime the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+    
+- rule: Repeat only if a topic is selected
+  condition:
+  - slot_was_set:
+    - topic: "estequiometria"
+  steps:
+  - intent: repetitions 
+  - action: action_topic_explanation 
+  
+- rule: Explain only if a topic is selected
+  condition:
+  - slot_was_set:
+    - topic: "radio atomico"
+  steps:
+  - intent: nUnderstand
+  - action: action_topic_explanation 
+
+- rule: Give video only if a topic is selected
+  condition:
+  - slot_was_set:
+    - topic: "radio atomico"
+  steps:
+  - intent: video
+  - action: action_give_video
+  
+- rule: Give exercise only if a topic is selected
+  condition:
+  - slot_was_set:
+    - topic: "radio atomico"
+  steps:
+  - intent: exercise
+  - action: action_give_exercise

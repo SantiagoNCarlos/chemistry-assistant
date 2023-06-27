@@ -1,0 +1,262 @@
+version: "3.1"
+
+nlu:
+
+- intent: positiveFeedback
+  examples: |
+    - Te agradezco
+    - Muy bien!
+    - Perfecto!
+    - Muchisimas gracias
+    - Muchisimas gracias por tu ayuda
+    - Muchas gracias
+    - gracias
+    - graciela
+    - Me salvaste
+    - Fuiste de gran ayuda
+
+- intent: video
+  examples: |
+    - quiero un video
+    - me gustaria ver un video
+    - me gustaria un video
+    - me gustaria profundizar sobre el tema
+    - un video
+    - me pasarias un video
+    - Me mostrarias un video
+    - un Video 
+    - contenido extra
+    - contenido multimedia
+    - video
+    - videos
+    - clips
+    - youtube
+    - Me pasarias un video
+    - me darias el link a un video
+    - link
+
+- intent: exercise
+  examples: |
+    - me pasarias unos ejercicios?
+    - me pasarias un ejercicio?
+    - quiero ejercicios
+    - quiero un ejercicio
+    - quiero ejercicio
+    - Me darias un ejercicio
+    - Me darias ejercicios
+    - Quiero ejercicios
+    - Me gustaria recibir unos ejercicios
+    - Algunos incisos tendras?
+    - Incisos para resolver
+    - Ejercicios
+    - Incisos
+    - Parte Practica
+    - Problema
+    - Me gustaria ver algunos problemas
+    - Quiero algunos problemas para resolver
+    - Algo para ejercitar tendras?
+
+- intent: repetitions
+  examples: |
+    - Me repetirias desde el principio?
+    - Me repetirias la explicacion?
+    - Me repetis
+    - Repetis
+    - volves a explicar
+    - volverias a explicar
+    - podrias decirlo de nuevo
+    - Repetirias
+
+- intent: understand
+  examples: |
+    - Ya entendi
+    - Comprendo
+    - Entendi
+    - Listo flama
+    - Entendi todo
+    - No tengo mas dudas
+    - Entiendo
+    - Entiendo perfectamente
+    - Gracias, entendi!
+    - He logrado comprenderlo
+    - Por fin entendi
+    
+- intent: nUnderstand
+  examples: |
+    - No entendi
+    - No entendi [Enlace Ionico]{"entity":"topic","value":"enlace ionico"}
+    - No entiendo [Enlace Ionico]{"entity":"topic","value":"enlace ionico"}
+    - No entiendo [Radio atomico]{"entity":"topic","value":"radio atomico"}
+    - No entiendo
+    - Mas o menos entiendo
+    - No Comprendo
+    - Confundido
+    - Confundida
+    - No termino de entender
+    - Estoy confundido
+    - Creo que comprendo
+    - Creo que entendi
+    - Dudas
+    - Me cuesta [Radio atomico]{"entity":"topic","value":"radio atomico"}
+    - Me cuesta
+    - Tengo muchas dudas
+    - Un poco entendi
+    - Podrias explicarme [Radio atomico]{"entity":"topic","value":"radio atomico"}
+    - Podrias explicarme [Enlace Covalente]{"entity":"topic","value":"enlace covalente"}
+    - Necesito que me expliques [Estructura de lewis]{"entity":"topic","value":"estructura de lewis"}
+    - Necesito ayuda
+    - Me podes explicar
+    - Me podes explicar [Estequiometria]{"entity":"topic","value":"estequiometria"}
+    - Explicame
+    - Explicame [Enlace Ionico]{"entity":"topic","value":"enlace ionico"}
+    - Necesito ayuda con [Enlace Covalente]{"entity":"topic","value":"enlace covalente"}
+    - No entiendo [Enlace Covalente]{"entity":"topic","value":"enlace covalente"}
+    - No entiendo
+    - No estaria entendiendo [Radio Atomico]{"entity":"topic","value":"radio atomico"}
+    - Tengo una consulta sobre [Radio Atomico]{"entity":"topic","value":"radio atomico"}
+    - Estoy re perdido con [Radio Atomico]{"entity":"topic","value":"radio atomico"}
+    - Estoy re perdido
+    - Estoy re perdido con [Estequiometria]{"entity":"topic","value":"estequiometria"}
+    - Me resulta dificil entender [Enlace covalente]{"entity":"topic","value":"enlace covalente"}
+    - Me resulta dificil entender [Radio Atomico]{"entity":"topic","value":"radio atomico"}
+    - Me resulta dificil entender 
+    - Tengo una duda de [Enlace Covalente]{"entity":"topic","value":"enlace covalente"}
+    - Tengo dudas con [Enlace Ionico]{"entity":"topic","value":"enlace ionico"}
+    - Tengo dudas
+    
+- intent: topics
+  examples: | 
+    - [Radio atomico] {"entity":"topic","value":"radio atomico"}
+    - [Radio] {"entity":"topic","value":"radio atomico"}
+    - [estructura de lewis]{"entity":"topic","value":"estructura de lewis"}
+    - [Estructura]{"entity":"topic","value":"estructura de lewis"}
+    - [Enlace Covalente]{"entity":"topic","value":"enlace covalente"}
+    - [Covalente]{"entity":"topic","value":"enlace covalente"}
+    - [Enlace Ionico]{"entity":"topic","value":"enlace ionico"}
+    - [Ionico]{"entity":"topic","value":"enlace ionico"}
+    - [Estequiometria]{"entity":"topic","value":"estequiometria"}
+    
+- intent: greet
+  examples: |
+    - Hola!
+    - Holis
+    - Buenas
+    - Bueeenas
+    - Buen dia
+    - Buenas tardes
+    - Buenas noches
+    - hey
+    - que onda
+
+- intent: goodbye
+  examples: |
+    - Adios
+    - Chau
+    - chauchis
+    - adieus
+    - Nos vemos
+    - Nos estamos viendo
+    - Que tengas un buen dia
+    - chau chau
+    - despues hablamos
+    - hablamos luego
+
+- intent: affirm
+  examples: |
+    - si
+    - s
+    - claro
+    - por supuesto
+    - me vendria bien
+    - Me ayudaria mucho
+    - Seria estupendo
+    - seria genial
+    - si, por favor
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nunca
+    - no me parece
+    - no es necesario
+    - de ningun modo
+    - na
+    - na no lo necesito
+    - no lo necesito
+    - nono
+    - nono esta bien
+
+- intent: presentation
+  examples: |
+    - Mi nombre es [Santiago]{"entity":"name","value":"Santiago"}
+    - Mi nombre es [santiago]{"entity":"name","value":"Santiago"}
+    - Me llamo [Analia]{"entity":"name","value":"Analia"}
+    - Me llamo [analia]{"entity":"name","value":"Analia"}
+    - Me conocen como 
+    - Es
+    - Soy 
+ 
+- intent: mood_great
+  examples: |
+    - [perfecto]{"entity":"mood","value":"happy"}
+    - [genial]{"entity":"mood","value":"happy"}
+    - [espectacular]{"entity":"mood","value":"happy"}
+    - estoy [bien]{"entity":"mood","value":"happy"}
+    - [increible]{"entity":"mood","value":"happy"}
+    - Me siento [muy bien]{"entity":"mood","value":"happy"}
+    - Ando [espectacular]{"entity":"mood","value":"happy"}
+    - Ando re [zarpado]{"entity":"mood","value":"happy"}
+    - [Alegre]{"entity":"mood","value":"happy"}
+    - [Estoy alegre]{"entity":"mood","value":"happy"}
+    - [bien]{"entity":"mood","value":"happy"}
+    - [bien aca andamos]{"entity":"mood","value":"happy"}
+    - [contento]{"entity":"mood","value":"happy"}
+    - [re piola]{"entity":"mood","value":"happy"}
+    - ando re [piola]{"entity":"mood","value":"happy"}
+    - estoy re [contento]{"entity":"mood","value":"happy"}
+
+- intent: mood_unhappy
+  examples: |
+    - estoy teniendo un dia [horrible]{"entity":"mood","value":"sad"}
+    - estoy [triste]{"entity":"mood","value":"sad"}
+    - [no me siento bien]{"entity":"mood","value":"sad"}
+    - estoy [decepcionado]{"entity":"mood","value":"sad"}
+    - super [triste]{"entity":"mood","value":"sad"}
+    - [triste]]{"entity":"mood","value":"sad"}
+    - [deprimido]{"entity":"mood","value":"sad"}
+    - [angustiado]{"entity":"mood","value":"sad"}
+    - [mas o menos]{"entity":"mood","value":"sad"}
+    - [maso]{"entity":"mood","value":"sad"}
+    - [masomenos]{"entity":"mood","value":"sad"}
+    - [para la mierda]{"entity":"mood","value":"sad"}
+    - re [triste]{"entity":"mood","value":"sad"}
+    - [decepcionado]{"entity":"mood","value":"sad"}
+    - [dolido]{"entity":"mood","value":"sad"}
+    - [mal]{"entity":"mood","value":"sad"}
+    - [re mal]{"entity":"mood","value":"sad"}
+    - [he estado mejor]{"entity":"mood","value":"sad"}
+    - [no es mi mejor dia]{"entity":"mood","value":"sad"}
+    
+- intent: mood_angry
+  examples: |
+    - estoy [enojado]{"entity":"mood","value":"angry"}
+    - estoy re [caliente]{"entity":"mood","value":"angry"}
+    - re [caliente]{"entity":"mood","value":"angry"}
+    - [enojado]{"entity":"mood","value":"angry"}
+    - re [enojado]{"entity":"mood","value":"angry"}
+    - [podrido]{"entity":"mood","value":"angry"}
+    - [cansado]{"entity":"mood","value":"angry"}
+    - estoy [podrido]{"entity":"mood","value":"angry"}
+    - estoy [cansado]{"entity":"mood","value":"angry"}
+    - [enfadado]{"entity":"mood","value":"angry"}
+    - [furioso]{"entity":"mood","value":"angry"}
+    - estoy re [enojado]{"entity":"mood","value":"angry"}
+    - muy [enojado]{"entity":"mood","value":"angry"}
+    - muy [cansado]{"entity":"mood","value":"angry"}
+    - muy [furioso]{"entity":"mood","value":"angry"}
+    - tengo una re [bronca]{"entity":"mood","value":"angry"}
+    - [embroncado]{"entity":"mood","value":"angry"}
+    - re contra [enojado]{"entity":"mood","value":"angry"}
+    - estoy re [nervioso]{"entity":"mood","value":"angry"}
+    
